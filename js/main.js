@@ -6,8 +6,8 @@ add_pic = function () {
     };
 };
 if (window.matchMedia('(prefers-color-scheme: dark)').matches && getCookie("dark-mode") != "no") {
+    setCookie("dark-mode", "yes", 30);
     mainbody.classList.add("mdui-theme-layout-dark");
-    setCookie("dark-mode","yes",30);
 }
 function darkmod_use() {
     if (getCookie("dark-mode") == "yes") {
@@ -15,16 +15,28 @@ function darkmod_use() {
         setCookie("dark-mode", "no", 30);
         mdui.snackbar({
             message: '亮主题'
-          });
+        });
     } else {
         mainbody.classList.add("mdui-theme-layout-dark");
         setCookie("dark-mode", "yes", 30)
         mdui.snackbar({
             message: '暗主题'
-          });
+        });
     }
 };
 
+updateBackToTopBtnStatus()
+window.onscroll = function () {
+    updateBackToTopBtnStatus();
+};
+function updateBackToTopBtnStatus() {
+    var btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btn.classList.remove("mdui-fab-hide");
+    } else {
+        btn.classList.add("mdui-fab-hide");
+    }
+}
 function scrollToTop() {
     if (window.scrollTo) {
         window.scrollTo({
@@ -51,13 +63,13 @@ function Share(toWhere) {
             clipboard.on('success', function (e) {
                 mdui.snackbar({
                     message: '复制成功'
-                  });
+                });
             });
 
             clipboard.on('error', function (e) {
                 mdui.snackbar({
                     message: '复制失败'
-                  });
+                });
             });
 
             clipboard.copy(window.location.href);
