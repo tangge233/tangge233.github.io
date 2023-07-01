@@ -10,7 +10,7 @@
 code ,.highlight{
     overflow-y:hidden;
     overflow-x:scroll;
-    color: #fc5185;
+    color: rgb(156, 205, 196);
 }
 a {
     color: rgba(247.65,65,.761);

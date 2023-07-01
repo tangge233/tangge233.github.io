@@ -1,10 +1,5 @@
 var mainbody = document.getElementById("main-body");
-add_pic = function () {
-    var imgs = document.getElementsByTagName('img');
-    for (var i = 0; i < imgs.length; i++) {
-        imgs[i].classList.add('mdui-img-fluid')
-    };
-};
+
 if (window.matchMedia('(prefers-color-scheme: dark)').matches && getCookie("dark-mode") != "no") {
     setCookie("dark-mode", "yes", 30);
     mainbody.classList.add("mdui-theme-layout-dark");
@@ -23,6 +18,13 @@ function darkmod_use() {
             message: '暗主题'
         });
     }
+};
+
+add_pic = function () {
+    var imgs = document.getElementsByTagName('img');
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].classList.add('mdui-img-fluid')
+    };
 };
 
 updateBackToTopBtnStatus()
