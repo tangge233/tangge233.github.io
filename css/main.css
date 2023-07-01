@@ -7,11 +7,6 @@
 .mdui-theme-layout-dark .post-content{
     border: 1px solid rgb(70,61,61);
 }
-code ,.highlight{
-    overflow-y:hidden;
-    overflow-x:scroll;
-    color: rgb(156, 205, 196);
-}
 a {
     color: rgba(247.65,65,.761);
     text-decoration: none;

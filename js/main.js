@@ -61,20 +61,7 @@ function Share(toWhere) {
             link = "http://connect.qq.com/widget/shareqq/index.html?url=" + window.location.href;
             break;
         case "Url":
-            var clipboard = new ClipboardJS();
-            clipboard.on('success', function (e) {
-                mdui.snackbar({
-                    message: '复制成功'
-                });
-            });
-
-            clipboard.on('error', function (e) {
-                mdui.snackbar({
-                    message: '复制失败'
-                });
-            });
-
-            clipboard.copy(window.location.href);
+            ClipboardJS.copy(window.location.href);
             return;
     }
     window.open(link, "_blank");
