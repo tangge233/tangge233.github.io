@@ -1,0 +1,35 @@
+.highlight {
+    background: #2d2d2d;
+    color: rgb(201, 209, 217);
+    font-family: Consolas;
+    text-align: left;
+    padding: 1em;
+    padding-left: 0.8em;
+    margin: 1em;
+    border-radius: 5px;
+    counter-reset: line;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    font-family: 'Microsoft YaHei';
+}
+
+
+.highlight .code .keyword,
+.highlight .code .function_ {
+    color: rgb(44, 122, 214);
+}
+
+.highlight .code .number {
+    color: rgb(181, 192, 120);
+}
+
+.highlight .code .string {
+    color: rgb(195, 145, 120);
+}
+
+.highlight .gutter .line {
+    margin: 4px;
+}

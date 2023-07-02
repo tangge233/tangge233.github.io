@@ -1,24 +1,54 @@
 var mainbody = document.getElementById("main-body");
+var mainDrawer = document.getElementById("main-drawer");
 
-if (window.matchMedia('(prefers-color-scheme: dark)').matches && getCookie("dark-mode") != "no") {
+if (window.matchMedia('(prefers-color-scheme: dark)').matches && getCookie("dark-mode") == null) {
     setCookie("dark-mode", "yes", 30);
-    mainbody.classList.add("mdui-theme-layout-dark");
 }
+darkmodeUpdate();
 function darkmod_use() {
     if (getCookie("dark-mode") == "yes") {
-        mainbody.classList.remove("mdui-theme-layout-dark");
         setCookie("dark-mode", "no", 30);
         mdui.snackbar({
             message: '亮主题'
         });
-    } else {
-        mainbody.classList.add("mdui-theme-layout-dark");
+    } else if (getCookie("dark-mode") == "no") {
         setCookie("dark-mode", "yes", 30)
         mdui.snackbar({
             message: '暗主题'
         });
+    } else if (getCookie("dark-mode") == "byTime") {
+        setCookie("dark-mode", "no", 30);
+        mdui.snackbar({
+            message: '亮主题'
+        });
     }
+    darkmodeUpdate();
 };
+function darkmodeUpdate() {
+    var type = getCookie("dark-mode");
+    switch (type) {
+        case "yes":
+            mainbody.classList.add("mdui-theme-layout-dark");
+            mainDrawer.classList.add("mdui-theme-layout-dark");
+            break;
+        case "no":
+            mainbody.classList.remove("mdui-theme-layout-dark");
+            mainDrawer.classList.remove("mdui-theme-layout-dark");
+            mainDrawer.classList.add("mdui-color-white");
+            break;
+        case "byTime":
+            if (Date.prototype.getHours >= 6 && Date.prototype.getHours <= 18) {
+                setCookie("dark-mode", "no", 30);
+            } else {
+                setCookie("dark-mode", "yes", 30);
+            }
+            break;
+        default:
+            setCookie("dark-mode", "byTime", 30);
+            darkmodeUpdate();
+            break;
+    }
+}
 
 add_pic = function () {
     var imgs = document.getElementsByTagName('img');

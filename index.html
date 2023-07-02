@@ -64,101 +64,154 @@
     <div class="mdui-drawer mdui-drawer-close mdui-drawer-full-height" id="main-drawer">
     <!--个人信息展示-->
     
-        <div style="background-image: url(https://s2.loli.net/2023/06/30/NUlhOBYpfJAmo9i.jpg); background-size: cover; background-position: center center; padding-top: 60px;">
+        <div style="background-size: cover; background-position: center center; padding-top: 60px; background-image: url(https://s2.loli.net/2023/06/30/NUlhOBYpfJAmo9i.jpg);">
             <div class="mdui-list-item">
                 <div class="mdui-list-item-avatar"><img src="https://drea.cc/uc_server/avatar.php?uid=738&amp;size=big"/></div>
                 <div class="mdui-list-item-content">tang_ge</div>
             </div>
         </div>
     
-    <!--文章部分-->
     <ul class="mdui-list" mdui-collapse="{accordion: true}">
+        <!--文章部分-->
         <li class="mdui-subheader">文章</li>
+
         <li class="mdui-list-item mdui-ripple mdui-list-item-active" href="/" >
-            <a href="/" class="mdui-list-item-icon mdui-icon material-icons">home</a>
-            <a href="/" class="mdui-list-item-content">主页</a>
-        </li>
-        <!--博客文章存档-->
-        
-        <li class="mdui-list-item mdui-ripple" href="/archives/">
-            <a class="mdui-list-item-icon mdui-icon material-icons" href="/archives/">inbox</a>
-            <a class="mdui-list-item-content" href="/archives/">存档</a>
-        </li>
-        
-        
-        <li class="mdui-collapse-item" mdui-tooltip="{content: '此功能还未完成编写'}">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                <a class="mdui-list-item-icon mdui-icon material-icons">label</a>
-                <div class="mdui-list-item-content">标签</div>
-                <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-            </div>
-            <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                
-                    <a class="mdui-list-item mdui-ripple" href="/tags/小站日志">小站日志</a>
-                
-            </ul>
-        </li>
+    <a href="/" class="mdui-list-item-icon mdui-icon material-icons">home</a>
+    <a href="/" class="mdui-list-item-content">主页</a>
+</li>
+<!--博客文章存档-->
+
+<li class="mdui-list-item mdui-ripple" href="/archives/">
+    <a class="mdui-list-item-icon mdui-icon material-icons" href="/archives/">inbox</a>
+    <a class="mdui-list-item-content" href="/archives/">存档</a>
+</li>
+
+
+<li class="mdui-collapse-item">
+    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <a class="mdui-list-item-icon mdui-icon material-icons">label</a>
+        <div class="mdui-list-item-content">标签</div>
+        <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+    </div>
+    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        <a class="mdui-list-item mdui-ripple" href="/tags/">全部标签</a>
         
         
-        <li class="mdui-collapse-item">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                <a class="mdui-list-item-icon mdui-icon material-icons">bookmark</a>
-                <div class="mdui-list-item-content">页面</div>
-                <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-            </div>
-            <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                
-                    <a class="mdui-list-item mdui-ripple" href="/2023/06/22/hello-world/">关于本站</a>
-                
-            </ul>
-        </li>
+            
+                <a class="mdui-list-item mdui-ripple" href="/tags/小站日志">小站日志</a>
+            
+            
         
+            
+                <a class="mdui-list-item mdui-ripple" href="/tags/开发心得">开发心得</a>
+            
+            
+        
+
+    </ul>
+</li>
+
+
+<li class="mdui-collapse-item">
+    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <a class="mdui-list-item-icon mdui-icon material-icons">bookmark</a>
+        <div class="mdui-list-item-content">页面</div>
+        <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+    </div>
+    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+            <a class="mdui-list-item mdui-ripple" href="/2023/06/22/hello-world/">关于本站</a>
+        
+    </ul>
+</li>
+
+
         <!--其它部分-->
         <li class="mdui-subheader">其它</li>
+
         
-            <li class="mdui-collapse-item">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a>
-                    <div class="mdui-list-item-content">其它平台</div>
-                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-                </div>
-                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                    
-                        <a class="mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://github.com/tangge233">GitHub</a>
-                    
-                        <a class="mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://space.bilibili.com/39564659">哔哩哔哩</a>
-                    
-                </ul>
-            </li>
-        
-        
-            <li class="mdui-collapse-item">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <a class="mdui-list-item-icon mdui-icon material-icons">people</a>
-                    <div class="mdui-list-item-content">友链</div>
-                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-                </div>
-                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                    
-                    <a target="_blank" rel="noopener" href="https://drea.cc/">
-                    <div class="mdui-list-item">
-                    <div class="mdui-list-item-avatar mdui-float-left"><img src="https://drea.cc/favicon.ico"/></div>
-                    <div class="mdui-list-item-content">梦幻框架</div>
-                    </div></a>
-                    
-                    <a target="_blank" rel="noopener" href="https://github.com/">
-                    <div class="mdui-list-item">
-                    <div class="mdui-list-item-avatar mdui-float-left"><img src="https://github.com/favicon.ico"/></div>
-                    <div class="mdui-list-item-content">GitHub</div>
-                    </div></a>
-                    
-                </ul>
-            </li>
-        
+    <li class="mdui-collapse-item">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a>
+            <div class="mdui-list-item-content">其它平台</div>
+            <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+        </div>
+        <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+            
+                <a class="mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://github.com/tangge233">GitHub</a>
+            
+                <a class="mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://space.bilibili.com/39564659">哔哩哔哩</a>
+            
+        </ul>
+    </li>
+
+
+    <li class="mdui-collapse-item">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-icon mdui-icon material-icons">people</a>
+            <div class="mdui-list-item-content">友链</div>
+            <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+        </div>
+        <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+            
+            <a target="_blank" rel="noopener" href="https://drea.cc/">
+            <div class="mdui-list-item">
+            <div class="mdui-list-item-avatar mdui-float-left"><img src="https://drea.cc/favicon.ico"/></div>
+            <div class="mdui-list-item-content">梦幻框架</div>
+            </div></a>
+            
+            <a target="_blank" rel="noopener" href="https://github.com/">
+            <div class="mdui-list-item">
+            <div class="mdui-list-item-avatar mdui-float-left"><img src="https://github.com/favicon.ico"/></div>
+            <div class="mdui-list-item-content">GitHub</div>
+            </div></a>
+            
+        </ul>
+    </li>
+
+
     </ul>
 </div>
     <div class="mdui-container" id="pjax-main">
         <div class="card_of_post">
+
+<div class="mdui-grid" style="margin:0; padding:0;">
+  <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4 mdui-col-lg-3" style="padding: 5px;">
+    <div class="mdui-card" style="width: auto;">
+        <div class="mdui-card-media">
+          <img src="https://s2.loli.net/2023/07/02/5l2IApiY3CwtJmQ.jpg" style="max-width:100%;height:auto;"/>
+          <div class="mdui-card-media-covered">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title">Hexo主题开发心得</div>
+                <div class="mdui-card-primary-subtitle">这代码写的简直**！</div>
+            </div>
+          </div>
+          <div class="mdui-card-menu">
+            <button class="mdui-btn mdui-btn-icon mdui-text-color-white">
+              <i class="mdui-icon material-icons">share</i>
+            </button>
+          </div>
+        </div>
+        <!-- 卡片的标题和副标题 -->
+        <div class="mdui-card-primary">
+            <img class="mdui-card-header-avatar" src="https://drea.cc/uc_server/avatar.php?uid=738&amp;size=big"/>
+            <div class="mdui-card-header-title">tang_ge</div>
+            <div class="mdui-card-header-subtitle">一名学生党</div>
+        </div>
+        <div class="mdui-divider"></div>
+        <!-- 卡片的按钮 -->
+        <div class="mdui-card-actions">
+            <div class="mdui-chip">
+              <span class="mdui-chip-title">2023-07-01</span>
+              <span class="mdui-chip-delete">
+                  <i class="mdui-icon material-icons">date_range</i>
+              </span>
+            </div>
+            <a class="mdui-btn mdui-ripple mdui-float-right" href="/2023/07/01/Hexo%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/">点我阅读<i class="mdui-icon material-icons">navigate_next</i></a>
+        </div>
+    </div>
+  </div>
+</div>
 
 <div class="mdui-grid" style="margin:0; padding:0;">
   <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4 mdui-col-lg-3" style="padding: 5px;">
@@ -242,7 +295,7 @@
 
 </div>
         
-    <a class="mdui-fab mdui-ripple mdui-color-orange mdui-fab-fixed mdui-fab-hide" id="backToTop" mdui-tooltip="{content: 'ToolTip.backToTop'}" onclick="scrollToTop()">
+    <a class="mdui-fab mdui-ripple mdui-color-orange mdui-fab-fixed mdui-fab-hide" id="backToTop" mdui-tooltip="{content: '回到顶部'}" onclick="scrollToTop()">
         <i class="material-icons mdui-icon mdui-text-color-black-icon">arrow_upward</i>
     </a>
 
@@ -251,12 +304,15 @@
 <script src="/js/main.js"></script>
 <!--百度统计-->
 <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?b495fb03b3357f1d1e160f1bd1da897a";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>    
+    if (window.location.hostname == "tangge233.github.io") {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b495fb03b3357f1d1e160f1bd1da897a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        } else {
+            mdui.snackbar({
+                message: '您正在通过其它渠道访问本博客！'
+            });
+        }
+</script>
 </html>
