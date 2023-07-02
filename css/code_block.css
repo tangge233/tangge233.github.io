@@ -30,6 +30,10 @@
     color: rgb(195, 145, 120);
 }
 
+.highlight .code .comment {
+    color: rgb(106, 153, 85);
+}
+
 .highlight .gutter .line {
     margin: 4px;
 }
