@@ -1,7 +1,6 @@
 .highlight {
     background: #2d2d2d;
     color: rgb(201, 209, 217);
-    font-family: Consolas;
     text-align: left;
     padding: 1em;
     padding-left: 0.8em;
@@ -36,4 +35,14 @@
 
 .highlight .gutter .line {
     margin: 4px;
+}
+
+code {
+    color: rgb(255, 87, 34);
+    padding: 2px 6px;
+    margin: 0;
+    font-size: .85em;
+    background-color: rgb(24, 25, 28);
+    border-radius: 2px;
+    overflow-wrap: break-word;
 }

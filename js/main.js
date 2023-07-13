@@ -50,12 +50,13 @@ function darkmodeUpdate() {
     }
 }
 
-add_pic = function () {
-    var imgs = document.getElementsByTagName('img');
+function tableAddStyle() {
+    var imgs = document.getElementsByTagName('table');
     for (var i = 0; i < imgs.length; i++) {
-        imgs[i].classList.add('mdui-img-fluid')
-    };
+        imgs[i].classList.add("mdui-table")
+    }
 };
+tableAddStyle();
 
 updateBackToTopBtnStatus()
 window.onscroll = function () {
