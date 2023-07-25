@@ -6,12 +6,12 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdui/1.0.2/css/mdui.min.css">
 <link rel="stylesheet" href="/css/main.css">
-<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script src="https://cdn.staticfile.org/mdui/1.0.2/js/mdui.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/favicon.ico">
 <title>微小站 - 个人小博客</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -39,10 +39,6 @@
                 <i class="mdui-icon material-icons">search</i>
             </a>
         
-        
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '分享'}" mdui-dialog="{target: '#Share',modal: true}">
-                <i class="mdui-icon material-icons">share</i>
-            </a>
         
     </div>
 </header>
@@ -188,7 +184,7 @@
                 网心云刷机
             </div>
             <div class="mdui-grid-tile-subtitle">
-                <i class="mdui-icon material-icons">date_range</i>发布于 2023-07-03 |
+                <i class="mdui-icon material-icons">date_range</i>发布于 2023-07-25 |
                 <i class="mdui-icon material-icons">list</i>标签：刷机  
             </div>
         </div>
@@ -199,7 +195,7 @@
         <img class="mdui-chip-icon mdui-img-rounded" src="https://drea.cc/uc_server/avatar.php?uid=738&amp;size=big"/>
         <span class="mdui-chip-title">tang_ge</span>
     </div>
-    <h1 id="前提说明"><a href="#前提说明" class="headerlink" title="前提说明"></a>前提说明</h1><p>本博客介绍的玩客云刷机用途是用来搭建家庭小服务器的，选择玩客云的机器是因为其刷机生态较好、刷机成本低、使用功耗低。当然玩客云的性能有限，只可以从事一些较轻的工作（比如挂载 <a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/">Alist</a>、<a target="_blank" rel="noopener" href="https://github.com/aria2/aria2">Aria2</a>）。</p>
+    <h1 id="前提说明"><a href="#前提说明" class="headerlink" title="前提说明"></a>前提说明</h1><p>本博客介绍的玩客云刷机用途是用来搭建家庭小服务器的，选择玩客云的机器是因为其刷机生态较好、刷机成本低、使用功耗低。当然玩客云的性能有限，只可以从事一些较轻的工作（比如挂载 <a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/">Alist</a>、qBittorrent，甚至可以挂上青龙面板帮你干各种活）。</p>
 <h1 id="刷机步骤"><a href="#刷机步骤" class="headerlink" title="刷机步骤"></a>刷机步骤</h1><p>不保证 100% 成功，本博客使用的玩客云硬件版本是 1.3 的，其它版本请移步至其它教程文档。</p>
 <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><p>准备玩客云本体一台（这里用的是二手货）、12V 1.5A 电源线适配器一个、公对公的 USB 线一条（使用 <code>USB 3.0</code> 的线也可以）、网线一条、电吹风一个（热风枪也可以）、十字形螺丝刀一个、拆机片一片（或者一字形螺丝刀等工具）、尖嘴老虎钳一个（非必须。主要主板卡的实在是太紧了，直接上手拉可能会受伤）、一台计算机</p>
 <h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><h3 id="Linux-系统-Armbian"><a href="#Linux-系统-Armbian" class="headerlink" title="Linux 系统 Armbian"></a>Linux 系统 Armbian</h3><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/hzyitc/armbian-onecloud/releases">GitHub</a>（如无法访问，可以试一试<a target="_blank" rel="noopener" href="https://kgithub.com/hzyitc/armbian-onecloud/releases">这个地址</a>）</p>
@@ -226,17 +222,17 @@
 <h3 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h3><p>输入 <code>date</code> 会发现显示的时间与计算机上的不相同，这是时区设置问题，输入 <code>timedatectl set-timezone Asia/Shanghai</code> 改为我国使用的东八区。</p>
 <h3 id="使用清华软件加速源"><a href="#使用清华软件加速源" class="headerlink" title="使用清华软件加速源"></a>使用清华软件加速源</h3><p>由于软件源服务器在国外，国内访问速度感人，因此需要换成加速源，不然你就要看着纹丝不动的进度条陷入沉思……</p>
 <p>编辑 <code>/etc/apt/sources.list</code> 文件，把 <code>http://deb.debian.org/</code> 换成 <code>https://mirrors.tuna.tsinghua.edu.cn/</code>。需要注意最后的 <code>http://security.debian.org/</code> 需要变成 <code>https://mirrors.tuna.tsinghua.edu.cn/debian-security</code>。</p>
-<p>下面是我自己使用的更新源文件内容。</p>
+<p>下面是我自己使用的更新源文件内容。如果你使用了与我相异版本的 Armbian，则你需要自己替换而不是直接使用下面的内容。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian bookworm main contrib non-free non-free-firmware</span><br><span class="line">#deb-src http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware</span><br><span class="line"></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware</span><br><span class="line">#deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware</span><br><span class="line"></span><br><span class="line">deb http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware</span><br><span class="line">#deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware</span><br><span class="line"></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware</span><br><span class="line">#deb-src http://security.debian.org/ bookworm-security main contrib non-free non-free-firmware</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装-TailScale"><a href="#安装-TailScale" class="headerlink" title="安装 TailScale"></a>安装 TailScale</h3><p>这是一个用来异地组建局域网的软件，可以让你无需公网 IP 就可以在非同一个局域网内访问另一个设备。</p>
-<p>执行 <code>curl -fsSL https://tailscale.com/install.sh | sh</code> 即可。下载会很慢。安装好后，输入 <code>tailscale login</code> 进行账户登录，此时会返回一个网址，在本地计算机打开操作即可。</p>
+<p>执行 <code>curl -fsSL https://tailscale.com/install.sh | sh</code> 即可。下载会很慢，因为服务器在国外。安装好后，输入 <code>tailscale login</code> 进行账户登录，此时会返回一个网址，在本地计算机打开操作即可。</p>
 <h3 id="安装-CasaOS"><a href="#安装-CasaOS" class="headerlink" title="安装 CasaOS"></a>安装 CasaOS</h3><p>这是一个便捷的 Doker 管理工具，而且界面很好看。使用 <code>curl -fsSL https://get.casaos.io | sudo bash</code> 安装。安装好后直接在浏览器里访问设备的 IP 地址就可以看到效果，初次使用需要设置登录密码。</p>
 <h3 id="安装-Alist"><a href="#安装-Alist" class="headerlink" title="安装 Alist"></a>安装 Alist</h3><p>此步骤是在安装好 <code>CasaOS</code> 的基础上操作的。</p>
-<p>执行 <code>docker run -d --restart=always -v /etc/alist:/opt/alist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022 --name=&quot;alist&quot; xhofe/alist:latest</code> 来安装。执行完命令后回到 <code>CasaOS</code> 可以看到可导入 Alist，单击导入，WebUI 端口选择 <code>5244</code>。</p>
-<p>软件图标可以用 <code>https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg</code></p>
+<p>目前 CasaOS 的 App Store 里直接提供了 Alist 应用，找到并安装就可以了。</p>
 <p>输入 <code>docker exec -it alist ./alist admin</code> 查看管理员信息，也就是获取登录的账户密码。登录后请务必去停用游客账户。</p>
 <p>之后你可以使用 <a target="_blank" rel="noopener" href="https://www.raidrive.com/">RaiDrive</a> 挂载到本地计算机。</p>
+<h3 id="安装-qBittorrent"><a href="#安装-qBittorrent" class="headerlink" title="安装 qBittorrent"></a>安装 qBittorrent</h3><p>qBittorrent 原版很显然是不支持 armv7 的，可是使用这个镜像 <code>superng6/qbittorrentee</code> 却可以成功安装并运行。<br>需要开放 8080(TCP) 端口，WebUI 初始账号是<code>admin</code>，密码是<code>adminadmin</code>。之后还需要开放对应的 BT 协议端口。</p>
 <h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>使用这个机器的原因主要在于<del>作者爱折腾</del>使用成本低。在某多上只需要20多即可搞到一台。假如以最高 18 W 功率满负荷运行，则一个月电费（按照 0.5 元&#x2F;度 计算）为 0.018*24*30*0.5 &#x3D; 6.48 元。</p>
 
     <hr/>
@@ -254,6 +250,11 @@
             <span>阅读上一篇 Hexo主题开发心得</span>
         </a>
     
+    
+        <a href="/2023/07/25/MDUI-for-Hexo/" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white">
+            <span>阅读下一篇 MDUI for Hexo</span>
+            <i class="mdui-icon material-icons">arrow_forward</i>
+        </a>
     
 </div>
 <link rel="stylesheet" href="/css/code_block.css">
