@@ -1,248 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="author" content="tang_ge">
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-<link rel="stylesheet" href="https://cdn.staticfile.org/mdui/1.0.2/css/mdui.min.css">
-<link rel="stylesheet" href="/css/main.css">
-<script src="https://cdn.staticfile.org/mdui/1.0.2/js/mdui.min.js"></script>
-<script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
-<script src="https://cdn.staticfile.org/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-<script src="https://cdn.staticfile.org/clipboard.js/2.0.11/clipboard.min.js"></script>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/favicon.ico">
-<title>微小站 - 个人小博客</title>
-<meta name="generator" content="Hexo 6.3.0"></head>
-<body class="mdui-theme-primary-orange mdui-theme-accent-orange mdui-appbar-with-toolbar" id="main-body">
-    <header class="mdui-appbar mdui-appbar-fixed">
-    <div class="mdui-progress mdui-color-theme" id="show-loading">
-        <div class="mdui-progress-indeterminate"></div>
-    </div>
-    <div class="mdui-toolbar mdui-color-theme">
-        <a href="javascript:;" class="mdui-btn mdui-btn-icon"
-            mdui-drawer="{target: '#main-drawer', swipe: true, overlay: true}">
-            <i class="mdui-icon material-icons">menu</i>
-        </a>
-        <a href="javascript:;" class="mdui-typo-title">
-            微小站
-        </a>
-        <div class="mdui-toolbar-spacer"></div>
-        
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '亮/黑主题'}" onclick="darkmod_use()">
-                <i class="mdui-icon material-icons">brightness_4</i>
-            </a>
-        
-        
-            <a class="mdui-btn mdui-btn-icon" href="/search/" mdui-tooltip="{content: '搜索'}">
-                <i class="mdui-icon material-icons">search</i>
-            </a>
-        
-        
-    </div>
-</header>
-<div class="mdui-dialog" id="Share">
-    <div class="mdui-dialog-title">分享当前页面</div>
-    <div class="mdui-dialog-content">选择你的分享方式……</div>
-    <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple" mdui-dialog-close onclick="Share('WeiBo')">微博</button>
-        <button class="mdui-btn mdui-ripple" mdui-dialog-close onclick="Shre('Url')">复制链接</button>
-        <button class="mdui-btn mdui-ripple" mdui-dialog-close>取消</button>
-    </div>
-</div>
-<script>
-    window.addEventListener('load', function () {
-        var element = document.getElementById('show-loading');
-        if (element) {
-            element.style.display = 'none';
-        }
-    });
-</script>
-    <div class="mdui-drawer mdui-drawer-close mdui-drawer-full-height" id="main-drawer">
-    <!--个人信息展示-->
-    
-        <div style="background-size: cover; background-position: center center; padding-top: 60px; background-image: url(https://s2.loli.net/2023/06/30/NUlhOBYpfJAmo9i.jpg);">
-            <div class="mdui-list-item">
-                <div class="mdui-list-item-avatar"><img src="https://drea.cc/uc_server/avatar.php?uid=738&amp;size=big"/></div>
-                <div class="mdui-list-item-content">tang_ge</div>
-            </div>
-        </div>
-    
-    <ul class="mdui-list" mdui-collapse="{accordion: true}">
-        <!--文章部分-->
-        <li class="mdui-subheader">文章</li>
-
-        <li class="mdui-list-item mdui-ripple mdui-list-item-active" href="/" >
-    <a href="/" class="mdui-list-item-icon mdui-icon material-icons">home</a>
-    <a href="/" class="mdui-list-item-content">主页</a>
-</li>
-<!--博客文章存档-->
-
-<li class="mdui-list-item mdui-ripple" href="/archives/">
-    <a class="mdui-list-item-icon mdui-icon material-icons" href="/archives/">inbox</a>
-    <a class="mdui-list-item-content" href="/archives/">存档</a>
-</li>
-
-
-<li class="mdui-collapse-item">
-    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <a class="mdui-list-item-icon mdui-icon material-icons">label</a>
-        <div class="mdui-list-item-content">标签</div>
-        <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-    </div>
-    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        <a class="mdui-list-item mdui-ripple" href="/tags/">全部标签</a>
-        
-        
-            
-                <a class="mdui-list-item mdui-ripple" href="/tags/小站日志">小站日志</a>
-            
-            
-        
-            
-                <a class="mdui-list-item mdui-ripple" href="/tags/开发心得">开发心得</a>
-            
-            
-        
-            
-                <a class="mdui-list-item mdui-ripple" href="/tags/刷机">刷机</a>
-            
-            
-        
-
-    </ul>
-</li>
-
-
-<li class="mdui-collapse-item">
-    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <a class="mdui-list-item-icon mdui-icon material-icons">bookmark</a>
-        <div class="mdui-list-item-content">页面</div>
-        <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-    </div>
-    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-            <a class="mdui-list-item mdui-ripple" href="/2023/06/22/hello-world/">关于本站</a>
-        
-    </ul>
-</li>
-
-
-        <!--其它部分-->
-        <li class="mdui-subheader">其它</li>
-
-        
-    <li class="mdui-collapse-item">
-        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a>
-            <div class="mdui-list-item-content">其它平台</div>
-            <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-        </div>
-        <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            
-                <a class="mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://github.com/tangge233">GitHub</a>
-            
-                <a class="mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://space.bilibili.com/39564659">哔哩哔哩</a>
-            
-        </ul>
-    </li>
-
-
-    <li class="mdui-collapse-item">
-        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <a class="mdui-list-item-icon mdui-icon material-icons">people</a>
-            <div class="mdui-list-item-content">友链</div>
-            <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
-        </div>
-        <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            
-            <a target="_blank" rel="noopener" href="https://drea.cc/">
-            <div class="mdui-list-item">
-            <div class="mdui-list-item-avatar mdui-float-left"><img src="https://drea.cc/favicon.ico"/></div>
-            <div class="mdui-list-item-content">梦幻框架</div>
-            </div></a>
-            
-            <a target="_blank" rel="noopener" href="https://github.com/">
-            <div class="mdui-list-item">
-            <div class="mdui-list-item-avatar mdui-float-left"><img src="https://github.com/favicon.ico"/></div>
-            <div class="mdui-list-item-content">GitHub</div>
-            </div></a>
-            
-        </ul>
-    </li>
-
-
-    </ul>
-</div>
-    <div class="mdui-container" id="pjax-main">
-        <div class="mdui-grid-tile mdui-hoverable" style="margin-top: 5%;">
-    <img class="mdui-img-fluid mdui-img-rounded" src="https://s2.loli.net/2023/06/29/HBFOKJLSuP1NAfe.png">
-    <div class="mdui-grid-tile-actions">
-        <div class="mdui-grid-tile-text">
-            <div class="mdui-grid-tile-title">
-                我的博客网站
-            </div>
-            <div class="mdui-grid-tile-subtitle">
-                <i class="mdui-icon material-icons">date_range</i>发布于 2023-06-22 |
-                <i class="mdui-icon material-icons">list</i>标签：小站日志  
-            </div>
-        </div>
-    </div>
-</div>
-<div class="post-content mdui-card" style="margin-top: 8px;">
-    <div class="mdui-chip">
-        <img class="mdui-chip-icon mdui-img-rounded" src="https://drea.cc/uc_server/avatar.php?uid=738&amp;size=big"/>
-        <span class="mdui-chip-title">tang_ge</span>
-    </div>
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此博客依靠 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行搭建。本博客使用的主题是 <a target="_blank" rel="noopener" href="https://github.com/186526/hexo-theme-mduilw">mduilw</a>。这个主题已经停止更新了，并且存在很多问题，因此本博客使用的使其魔改后的版本。</p>
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>我的博客网站 | 微小站</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"code.copy","copyFinish":"code.copyFinish","expand":"code.expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><div id="shadow-header"></div><article><div id="post-bg"><div id="post-title"><h1>我的博客网站</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-06-22T08:53:23.686Z" id="date"> 2023-06-22</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-08-02T10:54:38.225Z" id="updated"> 2023-08-02</time></div></span></div></div><hr><div id="post-content"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此博客依靠 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行搭建。本博客使用的主题是 <a target="_blank" rel="noopener" href="https://github.com/186526/hexo-theme-mduilw">mduilw</a>。这个主题已经停止更新了，并且存在很多问题，因此本博客使用的使其魔改后的版本。</p>
 <p>我原本是打算将博客部署在热铁盒上，但迫于其限制较多，最终选择了折中的方案–也就是部署在了 GitHub Page 上。<del>只要 GitHub 不抽风，世界的大门仍旧敞开着。</del></p>
 <h1 id="更新计划"><a href="#更新计划" class="headerlink" title="更新计划"></a>更新计划</h1><p>我会先完善博客的浏览体验。由于太久不写 HTML + JavaScript + CSS 了，网页中的很多东西会写 UI 方面的错误。不过在 ChatGPT 与 文心一言 的帮助下，网页修复效率提高了很多，估计过段时间就可以得到很不错的浏览体验了。</p>
 <p>会写软件的跟新日志、软件一些功能的实现方式、自己玩的小算法等等。当然更新不会太频繁，我毕竟还是一名学生党，仍旧有很多的东西需要去学习，进步的空间还有许多。</p>
-<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>这篇博客的封面是 <a target="_blank" rel="noopener" href="https://ak.hypergryph.com/#media">明日方舟</a> 里的，这是一个很优秀的游戏，有空可以去试玩一下😊</p>
-
-    <hr/>
-<div style="border:silver 1px dashed;width:auto;padding:12px;font-size: 12px;">
-    作者：<a href="https://tangge233.github.io/" target="_blank">tang_ge</a><br>
-    出处：<a href="https://tangge233.github.io/">微博客</a><br>
-    版权：本文版权归作者所有。本文中可能使了部分来自于网络的图片，如有侵权，请<a target="_blank" rel="noopener" href="https://github.com/tangge233/tangge233.github.io/issues">发起 Issues</a>。<br>
-    转载：欢迎转载，但未经作者同意，必须保留此段声明；必须在文章中给出原文连接；否则必究法律责任。
-</div>
-</div>
-<div class="mdui-typo" style="margin-top: 10px;text-align: right;">
-    
-    
-        <a href="/2023/06/30/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white">
-            <span>阅读下一篇 测试文章</span>
-            <i class="mdui-icon material-icons">arrow_forward</i>
-        </a>
-    
-</div>
-<link rel="stylesheet" href="/css/code_block.css">
-
-
-        <div style="text-align: center;margin-top: 10%;">
-
-</div>
-        
-    <a class="mdui-fab mdui-ripple mdui-color-orange mdui-fab-fixed mdui-fab-hide" id="backToTop" mdui-tooltip="{content: '回到顶部'}" onclick="scrollToTop()">
-        <i class="material-icons mdui-icon mdui-text-color-black-icon">arrow_upward</i>
-    </a>
-
-    </div>
-</body>
-<script src="/js/main.js"></script>
-<!--百度统计-->
-<script>
-    if (window.location.hostname == "tangge233.github.io") {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?b495fb03b3357f1d1e160f1bd1da897a";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        } else {
-            mdui.snackbar({
-                message: '您正在通过其它渠道访问本博客！'
-            });
-        }
-</script>
-</html>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>经历多次折腾，最终还是用上了现成的主题（笑）。这个主题非常优秀而且仍在积极维护中，有兴趣可以<a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">去看看</a>。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-start"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/06/30/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">← 下一篇 测试文章</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">tang_ge</a></h1><div id="description"><p>一个学生党的博客</p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/tangge233"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/39564659"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%A1%E5%88%92"><span class="toc-number">2.</span> <span class="toc-text">更新计划</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">后言</span></a></li></ol></div></div><footer><nobr><span class="icp-title">0</span><span class="icp-content">Copyright © 2023 tang_ge</span></nobr><br><nobr><span class="icp-title">1</span><span class="icp-content">Powered by GitHub Page</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside><div id="shadow-aside"></div></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
