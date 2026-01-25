@@ -1,0 +1,4 @@
+baseURL = 'https://blog.tangge233.top/'
+languageCode = 'zh-cn'
+title = 'tangge233 的备忘录'
+theme = 'hugo-theme-stack'
