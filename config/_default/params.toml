@@ -1,0 +1,134 @@
+mainSections       = ["posts"]
+featuredImageField = "image"
+rssFullContent     = true
+
+[footer]
+    since      = 2026
+    customText = '<a href="https://icp.gov.moe/?keyword=20240531" target="_blank">萌ICP备20240531号</a>'
+
+[dateFormat]
+    published   = "2006-01-02 15:04"
+    lastUpdated = "2006-01-02 15:04"
+
+[sidebar]
+    compact = true
+
+    [sidebar.avatar]
+        enabled = true
+        local   = false
+        src     = "/avatars/tangge233.png"
+
+[article]
+    headingAnchor = false
+    math          = true
+    toc           = true
+    readingTime   = true
+
+    [article.license]
+        enabled = true
+        default = "Licensed under CC BY-NC-SA 4.0"
+
+[widgets]
+    homepage = []
+    page     = []
+
+[opengraph.twitter]
+    site = ""
+    card = "summary_large_image"
+
+[colorScheme]
+    toggle  = true
+    default = "auto"
+
+[imageProcessing.cover]
+    enabled = true
+
+[imageProcessing.content]
+    enabled = true
+
+[comments]
+    enabled = false
+    provider = "disqus"
+
+    [comments.disqusjs]
+        shortname = ""
+        apiUrl = ""
+        apiKey = ""
+        admin = ""
+        adminLabel = ""
+
+    [comments.utterances]
+        repo = ""
+        issueTerm = "pathname"
+        label = ""
+
+    [comments.beaudar]
+        repo = ""
+        issueTerm = "pathname"
+        label = ""
+        theme = ""
+
+    [comments.remark42]
+        host = ""
+        site = ""
+        locale = ""
+
+    [comments.vssue]
+        platform = ""
+        owner = ""
+        repo = ""
+        clientId = ""
+        clientSecret = ""
+        autoCreateIssue = false
+
+    # Waline client configuration see: https://waline.js.org/en/reference/component.html
+    [comments.waline]
+        serverURL = ""
+        lang = ""
+        pageview = ""
+        emoji = [
+            "https://unpkg.com/@waline/emojis@1.0.1/weibo"
+        ]
+        requiredMeta = [
+            "name",
+            "email",
+            "url"
+        ]
+        [comments.waline.locale]
+            admin = "Admin"
+            placeholder = ""
+
+    [comments.twikoo]
+        envId = ""
+        region = ""
+        path = ""
+        lang = ""
+
+    # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+    [comments.cactus]
+        defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
+        serverName = "cactus.chat"
+        siteName = "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+
+    [comments.giscus]
+        repo = ""
+        repoID = ""
+        category = ""
+        categoryID = ""
+        mapping = ""
+        lightTheme = ""
+        darkTheme = ""
+        reactionsEnabled = 1
+        emitMetadata = 0
+
+    [comments.gitalk]
+        owner = ""
+        admin = ""
+        repo = ""
+        clientID = ""
+        clientSecret = ""
+        proxy = ""
+
+    [comments.cusdis]
+        host = ""
+        id = ""

@@ -2,6 +2,7 @@
 date = '2024-06-20T18:00:00+08:00'
 draft = false
 title = '网心云设备刷机教程'
+categories = ['Deploy']
 +++
 
 ## 前提说明

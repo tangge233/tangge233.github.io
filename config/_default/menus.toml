@@ -1,0 +1,25 @@
+[[main]]
+    name = "首页"
+    pageRef = "/"
+    weight = 10
+
+[[main]]
+    name = "文章"
+    pageRef = "/posts"
+    weight = 20
+
+[[main]]
+    name = "分类"
+    pageRef = "/categories"
+    weight = 30
+
+[[main]]
+    name = "标签"
+    pageRef = "/tags"
+    weight = 40
+
+[[social]]
+    name = "GitHub"
+    pre = "brand-github"
+    url = "https://github.com/tangge233"
+    weight = 10
