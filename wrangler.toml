@@ -1,4 +1,4 @@
-name = "tangge233-blog"
+name = 'tangge233-blog'
 compatibility_date = "2025-07-31"
 
 [build]

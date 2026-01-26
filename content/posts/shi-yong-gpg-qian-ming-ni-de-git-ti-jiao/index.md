@@ -134,13 +134,13 @@ gpg --armor --export 长ID
 
 转到 [GitHub 设置中](https://github.com/settings/keys)。点击“New GPG Key”，名字看自己心情，内容粘贴刚才复制的公钥。
 
-![image-ldvx.png](gh-add-key.png)
+![](gh-add-key.webp)
 
 然后“Add Key”并通过账户的验证
 
 你可以勾选上“Vigilant mode”来表明哪些是自己的 commits，但这会影响到之前未签名的 commits。
 
-![image-zbtt.png](gh-verify.png)
+![](gh-verify.webp)
 
 到此，GitHub 已经认识了我们的公钥，之后签名的 commits 都会标记为 `Verified`。
 

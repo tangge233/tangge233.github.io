@@ -43,23 +43,23 @@ mcdreforged init
 
 然后就会生成一堆文件和文件夹
 
-![](mcdr-init.png)
+![](mcdr-init.webp)
 
 把准备好的服务端或者已有的服务端文件丢入 server 文件夹里，随后编辑 config.yml 文件
 
-![](mcdr-lang.png)
+![](mcdr-lang.webp)
 
 修改语言字段 `language` 为 `zh_cn`
 
 修改启动命令字段 `start_command` 为你的服务端对应的启动命令
 
-![](mcdr-server-start.png)
+![](mcdr-server-start.webp)
 
 按照注释中的提示修改处理方式字段 `handler`
 
 比如 Fabric 端为 `vanilla_handler，Forge` 端则为 `forge_handler`
 
-![](mcdr-handler.png)
+![](mcdr-handler.webp)
 
 这样一改下来，差不多就是能跑的样子了。使用下面的命令开启服务器而不是原来的开服命令。
 
@@ -67,7 +67,7 @@ mcdreforged init
 mcdreforged
 ```
 
-![](mcdr-start.png)
+![](mcdr-start.webp)
 
 ## 安装插件
 
