@@ -25,4 +25,4 @@ categories = ['Resource']
 
 [仓库下载地址](https://github.com/PBH-BTN/PeerBanHelper/releases)
 
-![](pbh-ui.png)
+![](pbh-ui.webp)

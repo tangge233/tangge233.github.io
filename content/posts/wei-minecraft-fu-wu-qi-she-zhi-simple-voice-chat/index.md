@@ -25,7 +25,7 @@ Simple Voice Chat 是一个允许玩家直接在游戏内进行语音通话的 M
 
 (如已安装加载器可跳过)在 PCL 中安装 Forge 或者 Fabric 加载器，只需要选择版本后选择其中一个加载器类型即可。
 
-![](pcl-select-loader.png)
+![](pcl-select-loader.webp)
 
 模组下载可以通过 PCL 的模组下载功能或者直接前往 Modrinth 托管的项目中直接下载获取
 
@@ -33,11 +33,11 @@ Simple Voice Chat 是一个允许玩家直接在游戏内进行语音通话的 M
 
 在 PCL 中搜索关键词 `Voice`
 
-![](pcl-search-mod.png)
+![](pcl-search-mod.webp)
 
 找到对应版本以及加载器，下载模组。通过文件名可以判别模组所需要的加载器，比如 `fabric` `neoforge` `forge` 等关键词。
 
-![](pcl-mod-select.png)
+![](pcl-mod-select.webp)
 
 #### Modrinth 上直接下载
 
@@ -46,7 +46,7 @@ Simple Voice Chat 是一个允许玩家直接在游戏内进行语音通话的 M
 
 这里下载的是服务端是插件端时下载的文件
 
-![](modrinth-plugin.png)
+![](modrinth-plugin.webp)
 
 ### 服务端加载
 
@@ -59,18 +59,18 @@ Simple Voice Chat 是一个允许玩家直接在游戏内进行语音通话的 M
 
 插件服可以在 `plugins\voicechat` 中找到 `voicechat-server.properties` 配置文件。模组服需要在 `config\voicechat` 里找到。
 
-![](svc-config.png)
+![](svc-config.webp)
 
 打开配置文件可以看到目前 SVC 的通信监听端口是 24454
 
-![](svc-config-port.png)
+![](svc-config-port.webp)
 
 我们打开内网穿透服务后台，添加一个对 24454 端口的映射，协议为 UDP。
 
-![](frp-config.png)
+![](frp-config.webp)
 
 启动隧道之后我们可以得到对外地址，我们将对外地址填入 `voice_host` 配置项中。
 
-![](svc-config-host.png)
+![](svc-config-host.webp)
 
 之后重启服务器，客户端连接的时候就会尝试使用此地址进行语音通话通讯了。
