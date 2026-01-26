@@ -2,6 +2,7 @@
 date = '2024-06-22T18:00:00+08:00'
 draft = false
 title = '为 Minecraft 服务器设置 Simple Voice Chat'
+aliases = ["/archives/wei-minecraft-fu-wu-qi-she-zhi-simple-voice-chat"]
 categories = ['Deploy']
 tags = ['Minecraft']
 +++
