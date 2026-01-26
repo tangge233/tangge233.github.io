@@ -1,0 +1,22 @@
+{{ if .IsNamedParams }}
+{{- $src := .Get "logo" -}}
+{{- $small := .Get "logo_small" | default $src -}}
+{{- $large := .Get "logo_large" | default $src -}}
+<div style="border: 1px solid #7f8c8d; border-radius: 8px; overflow: hidden; transition: box-shadow 0.3s ease; height: auto; margin: 10px 0;">
+  <a href={{ .Get "url" | safeURL }} style="display: flex; align-items: center; padding: 1rem; text-decoration: none; color: inherit;" target="_blank">
+    <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 1rem;">
+      <img 
+        src={{ $src | safeURL }}
+        alt={{ .Get "name" }}
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+    </div>
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 0.5rem 0; font-size: 1.8rem;">{{ .Get "name" }}</h3>
+      <p style="margin: 0; font-size: 1.4rem;">{{ .Get "word" }}</p>
+    </div>
+  </a>
+</div>
+{{ else }}
+  {{ errorf "Friend shortcode: 参数错误 %q" .Position }}
+{{ end }}

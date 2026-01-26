@@ -16,7 +16,7 @@ rssFullContent     = true
     [sidebar.avatar]
         enabled = true
         local   = false
-        src     = "/avatars/tangge233.png"
+        src     = "/avatars/tangge233.webp"
 
 [article]
     headingAnchor = false

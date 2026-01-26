@@ -18,6 +18,11 @@
     pageRef = "/tags"
     weight = 40
 
+[[main]]
+    name = "友链"
+    pageRef = "/friends"
+    weight = 50
+
 [[social]]
     name = "GitHub"
     pre = "brand-github"
