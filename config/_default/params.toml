@@ -12,6 +12,7 @@ rssFullContent     = true
 
 [sidebar]
     compact = true
+    subtitle = "一只鸽子的备忘录"
 
     [sidebar.avatar]
         enabled = true

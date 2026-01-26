@@ -30,6 +30,9 @@
 
 [[social]]
     name = "GitHub"
-    pre = "brand-github"
+    identifier = "github"
     url = "https://github.com/tangge233"
     weight = 10
+
+    [social.params]
+        icon = "brand-github"
