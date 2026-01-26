@@ -2,7 +2,7 @@
 date = '2025-01-13T18:00:00+08:00'
 draft = false
 title = '使用 Adguard Home 减少广告'
-categories = ['Depoly']
+categories = ['Deploy']
 +++
 
 AdGuard Home 是 Adguard Software 下的一款可以自主搭建的私人 DNS 服务器服务端，有很多强大的拦截规则（大多数是社区提供的），可以拦截广告、不良网站等内容。

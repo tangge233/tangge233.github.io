@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Depoly GitHub Pages
+      - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
 

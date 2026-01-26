@@ -2,7 +2,7 @@
 date = '2025-03-02T6:00:00+08:00'
 draft = false
 title = '使用 GPG 签名你的 Git 提交'
-categories = ['Depoly']
+categories = ['Deploy']
 tags = ['Notes']
 +++
 
