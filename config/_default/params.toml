@@ -13,6 +13,7 @@ rssFullContent     = true
 [sidebar]
     compact = true
     subtitle = "一只鸽子的备忘录"
+    emoji = "🤓"
 
     [sidebar.avatar]
         enabled = true
@@ -30,8 +31,26 @@ rssFullContent     = true
         default = "Licensed under CC BY-NC-SA 4.0"
 
 [widgets]
-    homepage = []
-    page     = []
+    [[widgets.homepage]]
+        type = "archives"
+        [widgets.homepage.params]
+        # 要显示的年份数量，设置了最多显示5个
+        limit = 5
+
+    [[widgets.homepage]]
+        type = "search"
+
+    [[widgets.homepage]]
+        type = "categories"
+        [widgets.homepage.params]
+        limit = 10
+
+    [[widgets.homepage]]
+        type = "tag-cloud"
+        [widgets.homepage.params]
+        limit = 10
+    [[widgets.page]]
+        type = "toc"
 
 [opengraph.twitter]
     site = ""
