@@ -1,6 +1,7 @@
 name = 'tangge233-blog'
 compatibility_date = "2025-07-31"
 preview_urls = false
+workers_dev = false
 
 [build]
 command = "chmod a+x build.sh && ./build.sh"
