@@ -89,9 +89,11 @@ input() costs: 0.77 s
 readline() costs: 0.09 s
 ```
 
-### 能用库尽量用库
+### 尽量使用内置 C 实现
 
-Python 中的自带库基本都是 C 实现的，速度往往比自实现更加快。就比如可以写个简单的速度测试，测试一下欧几里得算法求取最大公约数、Stein 算法(二进制 GCD)与 `math.gcd` 谁的耗时更小。
+Python 中的自带库基本都是 C 实现的，速度往往比自实现更加快。
+
+就比如可以写个简单的速度测试，测试一下欧几里得算法求取最大公约数、Stein 算法(二进制 GCD)与 `math.gcd` 谁的耗时更小。
 
 ```Python
 import random
@@ -167,9 +169,106 @@ binary_gcd: 0.02637 s
 ```
 
 很明显，在 Python 中基于 C 实现的 math.gcd 的速度比自实现的快非常多。
-在 PyPy3 中，由于 JIT 编译的存在，自实现的 euclidean_gcd 反而比 math.gcd 稍快，但是差距不是非常大。
+在 PyPy3 中，自实现的 euclidean_gcd 反而比 math.gcd 稍快，但是差距不明显。
 
-在 TLE 的情况下，可以依次尝试换用 PyPy3、使用自实现的快速计算算法
+如果再加入幂计算的比较
+
+```Python
+import math
+import timeit
+from typing import Callable
+
+
+def fast_pow(base: int, exp: int) -> int:
+    result = 1
+    while exp:
+        if exp & 1:
+            result *= base
+        base *= base
+        exp >>= 1
+    return result
+
+
+def benchmark(name: str, func: Callable, *args, number: int = 1_000_000):
+    stmt = "func(*args)"
+    globals_dict = {"func": func, "args": args}
+    timer = timeit.Timer(stmt, globals=globals_dict)
+    try:
+        total_time = min(timer.repeat(repeat=5, number=number))
+        avg_ns = (total_time / number) * 1e9
+        print(f"{name:20} | {avg_ns:>10.2f} ns  (loop {number} times)")
+    except Exception as e:
+        print(f"{name:20} | Error: {e}")
+
+
+def main():
+    print("\n[1] 3 ** 10")
+    benchmark("fast_pow", fast_pow, 3, 10, number=1_000_000)
+    benchmark("math.pow", math.pow, 3, 10, number=1_000_000)
+    benchmark("**", lambda x, y: x**y, 3, 10, number=1_000_000)
+    benchmark("pow", pow, 3, 10, number=1_000_000)
+
+    print("\n[2] 123456 ** 1000")
+    benchmark("fast_pow", fast_pow, 123456, 1000, number=10_000)
+    benchmark("**", lambda x, y: x**y, 123456, 1000, number=10_000)
+    benchmark("pow", pow, 123456, 1000, number=10_000)
+    # math.pow 会溢出或转浮点丢失精度，单独捕获
+    benchmark("math.pow", math.pow, 123456, 1000, number=10_000)
+
+    print("\n[3] 3.14 ** 2.5")
+    benchmark("math.pow", math.pow, 3.14, 2.5, number=1_000_000)
+    benchmark("**", lambda x, y: x**y, 3.14, 2.5, number=1_000_000)
+    benchmark("pow", pow, 3.14, 2.5, number=1_000_000)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+运行结果
+```
+[1] 3 ** 10
+fast_pow             |     304.63 ns  (loop 1000000 times)
+math.pow             |      62.20 ns  (loop 1000000 times)
+**                   |     154.78 ns  (loop 1000000 times)
+pow                  |     127.11 ns  (loop 1000000 times)
+
+[2] 123456 ** 1000
+fast_pow             |   74179.44 ns  (loop 10000 times)
+**                   |   27398.52 ns  (loop 10000 times)
+pow                  |   27746.79 ns  (loop 10000 times)
+math.pow             | Error: math range error
+
+[3] 3.14 ** 2.5
+math.pow             |      48.33 ns  (loop 1000000 times)
+**                   |      83.77 ns  (loop 1000000 times)
+pow                  |      54.80 ns  (loop 1000000 times)
+```
+
+PyPy3 结果
+```
+[1] 3 ** 10
+fast_pow             |      35.52 ns  (loop 1000000 times)
+math.pow             |      44.67 ns  (loop 1000000 times)
+**                   |      27.43 ns  (loop 1000000 times)
+pow                  |      25.03 ns  (loop 1000000 times)
+
+[2] 123456 ** 1000
+fast_pow             |   60313.87 ns  (loop 10000 times)
+**                   |   26655.75 ns  (loop 10000 times)
+pow                  |   26691.16 ns  (loop 10000 times)
+math.pow             | Error: math range error
+
+[3] 3.14 ** 2.5
+math.pow             |      44.59 ns  (loop 1000000 times)
+**                   |      47.67 ns  (loop 1000000 times)
+pow                  |      47.00 ns  (loop 1000000 times)
+```
+
+结果显示 Python 中，`math.pow` 是非常快的，但是对于比较大的数据会超范围报错。
+PyPy3 中 fast_pow 在小数据量的时候稍占优势，但是数据量增大之后被 pow 远远超越。考虑到运算的时候经常会进行取模，使用 pow 进行幂运算是一个不错的选择。
+
+说了这么多差不多就是能用 PyPy3 就 PyPy3，能用内置的 C 实现就尽量使用，除非没有我们需要的运算(如矩阵快速幂等)。
 
 ### 优先选择 deque
 
