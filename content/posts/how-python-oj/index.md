@@ -18,6 +18,8 @@ Python 安装一般都是推荐使用虚拟环境，这样可以防止依赖相�
 
 对于使用虚拟环境的同学来说，只能暂时妥协在本地使用 Python 3.8 了，或者尝试换用 Anaconda 虚拟化环境管理。目前 [uv 不支持更低版本的 Python 虚拟环境](https://github.com/astral-sh/uv/issues/9833)。
 
+除了 Python3 之外，环境还支持 PyPy3。PyPy3 使用了 JIT 技术，可以让 Python 代码跑的很快。
+
 ## 学习过程中的记录
 
 ### 数据的读取
@@ -157,10 +159,17 @@ euclidean_gcd: 0.06009 秒
 binary_gcd: 0.49079 秒
 ```
 
-很明显，基于 C 实现的 math.gcd 的速度比自实现的更快
+PyPy3 结果
+```
+math.gcd: 0.00826 s
+euclidean_gcd: 0.00800 s
+binary_gcd: 0.02637 s
+```
 
-这也同样适用于 fast_pow、pow 和 math.pow。
-对于整数来说 pow 更好，并且 pow 支持取模。math.pow 则对浮点数计算更快。fast_pow 整数运算上的优势完全没有，但对于矩阵运算(`list[list[int]]` 这样只能 Python 语句执行实现的)来说还是可以提高计算速度的。
+很明显，在 Python 中基于 C 实现的 math.gcd 的速度比自实现的快非常多。
+在 PyPy3 中，由于 JIT 编译的存在，自实现的 euclidean_gcd 反而比 math.gcd 稍快，但是差距不是非常大。
+
+在 TLE 的情况下，可以依次尝试换用 PyPy3、使用自实现的快速计算算法
 
 ### 优先选择 deque
 
@@ -238,6 +247,6 @@ for k, v in enumerate(arr):
     some_thing[k] = v
 ```
 
-这两的性能差异不大
+这两的性能差异非常微小
 
 ### 持续更新中……
