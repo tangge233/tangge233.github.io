@@ -3,7 +3,7 @@ date = '2026-02-06T15:00:00+08:00'
 draft = false
 title = 'Cloudflare Workers 但是 Rust'
 categories = ['Develop']
-tags = ['Notes']
+tags = ['Notes', 'Rust']
 +++
 
 Rust 是一个非常好用的语言，可以让你在不用过于关注内存问题的同时构造出高性能的应用程序。
