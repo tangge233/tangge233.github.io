@@ -348,4 +348,13 @@ for k, v in enumerate(arr):
 
 这两的性能差异非常微小
 
-### 持续更新中……
+## 一些 Python 中较快的算法
+
+> PyPy3 中自实现大概率情况下比使用内置实现更快
+
+### 矩阵顺时针给旋转 90°
+
+```Python
+def rotate(matrix):
+    return list(map(list, zip(*matrix[::-1])))
+```
