@@ -60,7 +60,7 @@ cargo install espflash --locked
 
 `embassy-net` 启用 `proto-ipv4` 和 `dns` 特性。
 
-加入 `nanofish` 依赖和方便通过串口查看运行情况的 `esp-println`
+加入 `nanofish` 依赖和通过串口打印输出的 `esp-println`
 
 ```bash
 cargo add nanofish --features tls
@@ -139,7 +139,7 @@ async fn wifi_conn_task(mut ctrl: WifiController<'static>) {
 }
 ```
 
-在设置接入点信息后加入
+在设置接入点信息(也就是 `set_config`)后加入下面两行，让 embassy 执行 WiFi 控制器以及 WiFi 协议栈的异步任务
 
 ```rust
 spawner.spawn(wifi_conn_task(wifi_controller).unwrap());
@@ -148,7 +148,7 @@ spawner.spawn(wifi_runner_task(wifi_runner).unwrap());
 
 不出意外，编译烧录就能正常连上 WiFi 了。
 
-最后我们等一下 DHCP 获取 IP 地址。
+当然，还需要等一下 DHCP 获取下 IP 地址才能和互联网通讯。
 
 ```rust
 wifi_stack.wait_link_up().await;
@@ -158,7 +158,7 @@ println!("Got IPv4: {:?}", wifi_stack.config_v4());
 
 ### HTTP 一下
 
-这里用 nanofish 就很简单
+这里用 `nanofish` 就很简单。`reqwless` 使用方法也类似，具体可[查看文档](https://docs.rs/reqwless/latest/reqwless/)。
 
 ```rust
 let client = nanofish::DefaultHttpClient::new(&wifi_stack); // 如果这里报错了，说明版本对不上，需要更新下
