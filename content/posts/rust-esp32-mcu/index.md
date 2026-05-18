@@ -1,5 +1,5 @@
 +++
-date = '2025-05-11T12:00:00+08:00'
+date = '2026-05-11T12:00:00+08:00'
 draft = false
 title = '使用 Rust 进行 ESP32 开发'
 categories = ['Develop']
@@ -55,11 +55,12 @@ cargo install espflash --locked
 在 Zed 中需要编辑 `.zed/settings.json` 文件。
 
 ```json
-"rust-analyzer": {
-      "binary": {
-        "path": "/path/to/your/rust-analyzer.exe",
-      },
-      ...
+{
+  "rust-analyzer": {
+    "binary": {
+      "path": "/path/to/your/rust-analyzer.exe",
+    }
+    // other configs...
 }
 ```
 

@@ -15,10 +15,7 @@ rssFullContent     = true
     subtitle = "一只鸽子的备忘录"
     emoji = "🤓"
 
-    [sidebar.avatar]
-        enabled = true
-        local   = false
-        src     = "/avatars/tangge233.webp"
+    avatar = "/avatars/tangge233.webp"
 
 [article]
     headingAnchor = false
