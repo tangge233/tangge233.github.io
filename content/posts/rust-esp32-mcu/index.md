@@ -9,8 +9,12 @@ tags = ['Notes', 'Rust', 'ESP32']
 ## 相关资源
 
 [ESP32 Rust 开发指南](https://docs.espressif.com/projects/rust/book/preface.html)
+
 [ESP32 std 开发指南](https://narukara.github.io/std-training-zh-cn/)
+
 [ESP32 no-std 开发指南](https://docs.espressif.com/projects/rust/no_std-training/01_intro.html)
+
+[Rust 嵌入式指南](https://docs.rust-embedded.org/book/)
 
 ## 介绍
 
@@ -285,3 +289,25 @@ async fn wifi_conn_task(mut ctrl: WifiController<'static>) {
     }
 }
 ```
+
+## 常见问题
+
+### 单片机开发要 Rust 干什么
+
+Rust 为单片机开发提供了一种新的选择，你可以 ASM 极致控制权，也可以 C 关注业务的同时不丧志过多的自由控制能力，也可以 Rust 更加关注业务实现。当然很多人会诟病 Rust 生命周期系统让开发举步为艰，但正是这套机制，把数据竞争和悬垂指针等原本依靠人解决的问题，提前到编译期强制解决，让业务实现不再受制由于奇妙的内存问题。
+
+### no_std 环境
+
+不能用 [std](https://doc.rust-lang.org/stable/std/index.html) 库，但是能用 [core](https://doc.rust-lang.org/stable/core/index.html)、[alloc](https://doc.rust-lang.org/stable/alloc/index.html)（需要指定 allocator） 这些库。
+
+单片机中一般不怎么使用动态内存分配，也就是 alloc 中 Vec 等模块。单片机内存小，频繁的堆分配可能会导致内存碎片化，以至于可能出现找不到连续的堆空间。当然，如果出现栈空间不够，堆空间分配来缓解栈空间压力也是一种可取的做法。
+
+详细可以阅读 [Rust 嵌入式指南中的介绍](https://docs.rust-embedded.org/book/intro/no-std.html)
+
+### 怎么这么烫
+
+[embassy_net 处理唤醒可能存在问题](https://github.com/embassy-rs/embassy/issues/5827)，可能出现无法进入休眠的情况。
+
+### 那我做工程可以用 Rust 吗
+
+当然可以，前提是你所用的硬件平台的生态支持良好。比如说 esp32 就有官方支持，而且社区支持也积极活跃。当然，如果你赶工或者项目体量小，那么拿你最熟悉的、开发最方便的。毕竟语言是一个工具，解决问题是主要目标。
