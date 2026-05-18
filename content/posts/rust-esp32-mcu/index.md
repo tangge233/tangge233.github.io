@@ -48,6 +48,21 @@ cargo install espflash --locked
 
 一切配置完毕，按下 `s` 键生成代码模板。
 
+### 2026/5/18 更新批注
+
+由于 rust-analyzer 更新，对于 1.95 nightly 版本的会额外传入一个在 esp 工具链中早已被移除的参数导致编辑器的智能提示失效。esp 工具链截止本文修改时还未修复此问题。如果你需要继续使用 Rust 工具链，则需要降低 rust-analyzer 的版本到 [5 月 4 号更新的版本](https://github.com/rust-lang/rust-analyzer/releases/tag/2026-05-04)。
+
+在 Zed 中需要编辑 `.zed/settings.json` 文件。
+
+```json
+"rust-analyzer": {
+      "binary": {
+        "path": "/path/to/your/rust-analyzer.exe",
+      },
+      ...
+}
+```
+
 ## 访问下互联网
 
 一个有 WiFi 功能的单片机很是让人想迫不及待使用下其 WiFi 功能，~~虽然单片机一般从点灯大师开始~~。
