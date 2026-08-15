@@ -1,5 +1,5 @@
 +++
-date = '2026-8-15 18:00:00'
+date = '2026-08-15T18:00:00+08:00'
 draft = false
 title = '使用 VitePlus 驱动 DeepSeek Harness'
 categories = ['Resource']
