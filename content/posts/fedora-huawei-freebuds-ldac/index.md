@@ -12,13 +12,13 @@ tags = ['Notes']
 
 # 解决方案
 
-使用社区开发的 [OpenFreebuds](https://github.com/melianmiko/OpenFreebuds) 解决，支持 Windows 和 Fedora。在 Fedora 上推荐使用 Flatpak 安装。
+使用社区开发的 [OpenFreebuds](https://github.com/melianmiko/OpenFreebuds) 解决，支持 Windows 和 Linux。在 Fedora 上推荐使用 Flatpak 安装。
 
 ```shell
 flatpak install pw.mmk.OpenFreebuds
 ```
 
-连接上耳机后，程序会自动识别到耳机并进行对接。在 `Sound quality` 处选择，`Prioritize sound quality` 即可对当前连接设备解锁 LDAC 音频编码。
+连接上耳机后，程序会自动识别到耳机并进行对接。在 `Sound quality` 处选择 `Prioritize sound quality` 即可对当前连接设备解锁 LDAC 音频编码。
 
 ![](open-freebuds.webp)
 
